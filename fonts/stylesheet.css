@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'SF Pro Rounded';
+    src: url('SFRounded-Ultralight.eot');
+    src: local('SF Pro Rounded Heavy'), local('SFRounded-Ultralight'),
+        url('SFRounded-Ultralight.eot?#iefix') format('embedded-opentype'),
+        url('SFRounded-Ultralight.woff2') format('woff2'),
+        url('SFRounded-Ultralight.woff') format('woff'),
+        url('SFRounded-Ultralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Rounded';
+    src: url('SFRounded-Ultralight_1.eot');
+    src: local('SF Pro Rounded Bold'), local('SFRounded-Ultralight'),
+        url('SFRounded-Ultralight_1.eot?#iefix') format('embedded-opentype'),
+        url('SFRounded-Ultralight_1.woff2') format('woff2'),
+        url('SFRounded-Ultralight_1.woff') format('woff'),
+        url('SFRounded-Ultralight_1.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Rounded';
+    src: url('SFRounded-Ultralight_2.eot');
+    src: local('SF Pro Rounded Regular'), local('SFRounded-Ultralight'),
+        url('SFRounded-Ultralight_2.eot?#iefix') format('embedded-opentype'),
+        url('SFRounded-Ultralight_2.woff2') format('woff2'),
+        url('SFRounded-Ultralight_2.woff') format('woff'),
+        url('SFRounded-Ultralight_2.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Medium.eot');
+    src: local('SF Pro Text Medium'), local('SFProText-Medium'),
+        url('SFProText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Medium.woff2') format('woff2'),
+        url('SFProText-Medium.woff') format('woff'),
+        url('SFProText-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Regular.eot');
+    src: local('SF Pro Text Regular'), local('SFProText-Regular'),
+        url('SFProText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Regular.woff2') format('woff2'),
+        url('SFProText-Regular.woff') format('woff'),
+        url('SFProText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Rounded';
+    src: url('SFRounded-Ultralight_3.eot');
+    src: local('SF Pro Rounded Semibold'), local('SFRounded-Ultralight'),
+        url('SFRounded-Ultralight_3.eot?#iefix') format('embedded-opentype'),
+        url('SFRounded-Ultralight_3.woff2') format('woff2'),
+        url('SFRounded-Ultralight_3.woff') format('woff'),
+        url('SFRounded-Ultralight_3.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Semibold.eot');
+    src: local('SF Pro Text Semibold'), local('SFProText-Semibold'),
+        url('SFProText-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Semibold.woff2') format('woff2'),
+        url('SFProText-Semibold.woff') format('woff'),
+        url('SFProText-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

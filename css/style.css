@@ -1,0 +1,280 @@
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("../fonts/SFRounded-Ultralight.eot");
+  src: local("SF Pro Rounded Heavy"), local("SFRounded-Ultralight"),
+    url("../fonts/SFRounded-Ultralight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SFRounded-Ultralight.woff2") format("woff2"),
+    url("../fonts/SFRounded-Ultralight.woff") format("woff"),
+    url("../fonts/SFRounded-Ultralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("../fonts/SFRounded-Ultralight_1.eot");
+  src: local("SF Pro Rounded Bold"), local("SFRounded-Ultralight"),
+    url("../fonts/SFRounded-Ultralight_1.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/SFRounded-Ultralight_1.woff2") format("woff2"),
+    url("../fonts/SFRounded-Ultralight_1.woff") format("woff"),
+    url("../fonts/SFRounded-Ultralight_1.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("../fonts/SFRounded-Ultralight_2.eot");
+  src: local("SF Pro Rounded Regular"), local("SFRounded-Ultralight"),
+    url("../fonts/SFRounded-Ultralight_2.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/SFRounded-Ultralight_2.woff2") format("woff2"),
+    url("../fonts/SFRounded-Ultralight_2.woff") format("woff"),
+    url("../fonts/SFRounded-Ultralight_2.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/SFProText-Medium.eot");
+  src: local("SF Pro Text Medium"), local("SFProText-Medium"),
+    url("../fonts/SFProText-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SFProText-Medium.woff2") format("woff2"),
+    url("../fonts/SFProText-Medium.woff") format("woff"),
+    url("../fonts/SFProText-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/SFProText-Regular.eot");
+  src: local("SF Pro Text Regular"), local("SFProText-Regular"),
+    url("../fonts/SFProText-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SFProText-Regular.woff2") format("woff2"),
+    url("../fonts/SFProText-Regular.woff") format("woff"),
+    url("../fonts/SFProText-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("../fonts/SFRounded-Ultralight_3.eot");
+  src: local("SF Pro Rounded Semibold"), local("SFRounded-Ultralight"),
+    url("../fonts/SFRounded-Ultralight_3.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/SFRounded-Ultralight_3.woff2") format("woff2"),
+    url("../fonts/SFRounded-Ultralight_3.woff") format("woff"),
+    url("../fonts/SFRounded-Ultralight_3.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../fonts/FProText-Semibold.eot");
+  src: local("SF Pro Text Semibold"), local("SFProText-Semibold"),
+    url("../fonts/SFProText-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/SFProText-Semibold.woff2") format("woff2"),
+    url("../fonts/SFProText-Semibold.woff") format("woff"),
+    url("../fonts/SFProText-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "SF Pro Rounded", sans-serif;
+  padding-top: 44px;
+  background-color: #f2f2f2;
+}
+
+a,
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.logo {
+  text-decoration: none;
+  width: 100px;
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.input {
+  background: #ffffff no-repeat left 11px center;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 8px 8px 45px;
+}
+
+.input:focus {
+  outline: 2px solid #7b7d83;
+}
+
+.address {
+  flex: 0.8;
+}
+
+.input-address {
+  width: 100%;
+  background: #efeeee url(../img/icons/location.svg) no-repeat top 8px left 12px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.0015);
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.button-primary {
+  background: #fa4a0c;
+  border: 1px solid #fa4a0c;
+  color: #f6f6f9;
+  margin: 0 5px;
+}
+
+.button-primary:hover {
+  background: #efeeee;
+  border: 2px solid #fa4a0c;
+  color: #fa4a0c;
+}
+
+.button-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #f6f6f9;
+}
+
+.button-primary .button-auth-svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  background-color: #f6f6f9;
+  -webkit-mask: url("../img/icons/login.svg") no-repeat 50% 50%;
+  mask: url("../img/icons/login.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.button-primary:hover .button-auth-svg {
+  background-color: #fa4a0c;
+}
+
+.button-primary:hover .button-text {
+  color: #fa4a0c;
+}
+
+.button-cart {
+  display: none;
+  margin: 0 5px;
+  background: #efeeee;
+  border: 2px solid #fa4a0c;
+  color: #fa4a0c;
+}
+
+.button-cart .button-cart-svg {
+  width: 24px;
+  height: 24px;
+  background-color: #fa4a0c;
+  -webkit-mask: url("../img/icons/cart.svg") no-repeat 50% 50%;
+  mask: url("../img/icons/cart.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.button-cart .button-text {
+  color: #fa4a0c;
+}
+
+.button-cart:hover {
+  background-color: #fa4a0c;
+}
+
+.button-cart:hover .button-cart-svg {
+  background-color: #f6f6f9;
+}
+
+.button-cart:hover .button-text {
+  color: #f6f6f9;
+}
+
+.button-out {
+  display: none;
+  margin: 0 5px;
+}
+
+.button-primary .button-out-svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  background-color: #f6f6f9;
+  -webkit-mask: url("../img/icons/logout.svg") no-repeat 50% 50%;
+  mask: url("../img/icons/logout.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.user-name {
+  display: none;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000;
+}
+
+.search {
+  margin-left: auto;
+}
+
+.input-search {
+  width: 300px;
+  background-image: url(../img/icon/search.svg);
+}
