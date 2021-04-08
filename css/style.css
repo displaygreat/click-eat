@@ -1,40 +1,32 @@
 @font-face {
   font-family: "SF Pro Rounded";
-  src: url("../fonts/SFRounded-Ultralight.eot");
-  src: local("SF Pro Rounded Heavy"), local("SFRounded-Ultralight"),
-    url("../fonts/SFRounded-Ultralight.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/SFRounded-Ultralight.woff2") format("woff2"),
-    url("../fonts/SFRounded-Ultralight.woff") format("woff"),
-    url("../fonts/SFRounded-Ultralight.ttf") format("truetype");
-  font-weight: 200;
+  src: local("SF Pro Rounded Regular"), local("SF-Pro-Rounded-Regular"),
+    url("../fonts/SF-Pro-Rounded-Regular.eot") format("embedded-opentype"),
+    url("../fonts/SF-Pro-Rounded-Regular.woff") format("woff"),
+    url("../fonts/SF-Pro-Rounded-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "SF Pro Rounded";
-  src: url("../fonts/SFRounded-Ultralight_1.eot");
-  src: local("SF Pro Rounded Bold"), local("SFRounded-Ultralight"),
-    url("../fonts/SFRounded-Ultralight_1.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/SFRounded-Ultralight_1.woff2") format("woff2"),
-    url("../fonts/SFRounded-Ultralight_1.woff") format("woff"),
-    url("../fonts/SFRounded-Ultralight_1.ttf") format("truetype");
-  font-weight: 200;
+  src: local("SF Pro Rounded Semibold"), local("SF-Pro-Rounded-Semibold"),
+    url("../fonts/SF-Pro-Rounded-Semibold.eot") format("embedded-opentype"),
+    url("../fonts/SF-Pro-Rounded-Semibold.woff") format("woff"),
+    url("../fonts/SF-Pro-Rounded-Semibold.ttf") format("truetype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "SF Pro Rounded";
-  src: url("../fonts/SFRounded-Ultralight_2.eot");
-  src: local("SF Pro Rounded Regular"), local("SFRounded-Ultralight"),
-    url("../fonts/SFRounded-Ultralight_2.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/SFRounded-Ultralight_2.woff2") format("woff2"),
-    url("../fonts/SFRounded-Ultralight_2.woff") format("woff"),
-    url("../fonts/SFRounded-Ultralight_2.ttf") format("truetype");
-  font-weight: 200;
+  src: local("SF Pro Rounded Bold"), local("SF-Pro-Rounded-Bold"),
+    url("../fonts/SF-Pro-Rounded-Bold.eot") format("embedded-opentype"),
+    url("../fonts/SF-Pro-Rounded-Bold.woff") format("woff"),
+    url("../fonts/SF-Pro-Rounded-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -61,20 +53,6 @@
     url("../fonts/SFProText-Regular.woff") format("woff"),
     url("../fonts/SFProText-Regular.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SF Pro Rounded";
-  src: url("../fonts/SFRounded-Ultralight_3.eot");
-  src: local("SF Pro Rounded Semibold"), local("SFRounded-Ultralight"),
-    url("../fonts/SFRounded-Ultralight_3.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/SFRounded-Ultralight_3.woff2") format("woff2"),
-    url("../fonts/SFRounded-Ultralight_3.woff") format("woff"),
-    url("../fonts/SFRounded-Ultralight_3.ttf") format("truetype");
-  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -176,7 +154,7 @@ button {
 
 .button-primary {
   background: #fa4a0c;
-  border: 1px solid #fa4a0c;
+  border: 2px solid #fa4a0c;
   color: #f6f6f9;
   margin: 0 5px;
 }
@@ -261,6 +239,10 @@ button {
   transform: rotate(180deg);
 }
 
+.button-primary:hover .button-out-svg {
+  background-color: #fa4a0c;
+}
+
 .user-name {
   display: none;
   margin-right: 20px;
@@ -277,4 +259,65 @@ button {
 .input-search {
   width: 300px;
   background-image: url(../img/icon/search.svg);
+}
+
+.container-promo {
+  width: 600px;
+  height: 300px;
+}
+
+.promo {
+  position: relative;
+  padding: 68px 70px;
+  margin-bottom: 56px;
+  height: 400px;
+}
+
+.promo-shape {
+  width: 70%;
+  border-radius: 10px none none 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 400px solid #f29030;
+  border-right: 200px solid transparent;
+  z-index: -50;
+}
+
+.promo-title,
+.promo-text {
+  color: #fff;
+}
+
+.promo-title {
+  font-weight: 700;
+  font-size: 48px;
+}
+.promo-text {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.pizza {
+  background: url(../img/promo/pizza1.jpg) no-repeat right;
+  background-size: contain;
+}
+
+.sushi {
+  background: url(../img/promo/sushi1.jpg) no-repeat right;
+  background-size: contain;
+}
+
+.burger {
+  background: url(../img/promo/burger1.jpg) no-repeat right;
+  background-size: contain;
+}
+
+.dessert {
+  background: url(../img/promo/dessert1.jpg) no-repeat right;
+  background-size: contain;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fa4a0c;
 }
