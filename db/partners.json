@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Pizza Garlik",
+    "time_of_delivery": 25,
+    "stars": 4.8,
+    "price": 65,
+    "kitchen": "Pizza",
+    "image": "img/garlik/preview.jpg",
+    "products": "pizza.json"
+  },
+  {
+    "name": "Pasta Basta",
+    "time_of_delivery": 45,
+    "stars": 4.7,
+    "price": 45,
+    "kitchen": "Pasta",
+    "image": "img/pasta/preview.jpg",
+    "products": "pasta.json"
+  },
+  {
+    "name": "Oshi Oshi Sushi",
+    "time_of_delivery": 45,
+    "stars": 4.6,
+    "price": 25,
+    "kitchen": "Sushi",
+    "image": "img/sushi/preview.jpg",
+    "products": "sushi.json"
+  },
+  {
+    "name": "Z Burger",
+    "time_of_delivery": 50,
+    "stars": 4.9,
+    "price": 40,
+    "kitchen": "Burger",
+    "image": "img/burger/preview.jpg",
+    "products": "burger.json"
+  },
+  {
+    "name": "Goodness",
+    "time_of_delivery": 60,
+    "stars": 4.8,
+    "price": 50,
+    "kitchen": "Vegan",
+    "image": "img/vegan/preview.jpg",
+    "products": "vegan.json"
+  },
+  {
+    "name": "Patisserie",
+    "time_of_delivery": 40,
+    "stars": 5.0,
+    "price": 45,
+    "kitchen": "Dessert",
+    "image": "img/dessert/preview.jpg",
+    "products": "dessert.json"
+  }
+]
