@@ -256,25 +256,17 @@ input::placeholder {
   color: #000;
 }
 
-.swiper-container {
-  margin-bottom: 40px;
-}
-
 .container-promo {
-  width: 600px;
-  height: 300px;
+  height: 400px;
 }
 
 .promo {
   position: relative;
   padding: 68px 70px;
-  margin-bottom: 56px;
-  height: 400px;
 }
 
 .promo-shape {
   width: 70%;
-  border-radius: 10px none none 10px;
   position: absolute;
   top: 0;
   left: 0;
@@ -321,6 +313,11 @@ input::placeholder {
   background-color: #fa4a0c;
 }
 
+.restaurants,
+.menu {
+  margin-top: 64px;
+}
+
 .search {
   flex: 0.8;
   margin-left: auto;
@@ -334,7 +331,7 @@ input::placeholder {
 .section-heading {
   display: flex;
   align-items: center;
-  margin-bottom: 44px;
+  margin: 0 0 54px;
 }
 
 .section-title {
@@ -356,17 +353,17 @@ input::placeholder {
   background: #ffffff;
   box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
   border-radius: 30px;
-  margin: 60px 0;
+  margin: 72px 0;
   display: flex;
   justify-content: center;
   flex-basis: 31%;
-  height: 370px;
   text-decoration: none;
 }
 
 .card-restaurant {
   cursor: pointer;
   position: relative;
+  height: 370px;
 }
 
 .card-img-wrap {
@@ -387,10 +384,10 @@ input::placeholder {
   object-fit: cover;
 }
 
-.card-text {
+.card-restaurant .card-text {
   width: 80%;
-  padding: 20px 0 35px;
-  min-height: auto;
+  padding: 44px 0 34px;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   margin-top: auto;
@@ -410,10 +407,6 @@ input::placeholder {
   font-size: 22px;
   line-height: 22px;
   text-align: center;
-}
-
-.card-title-reg {
-  font-weight: 400;
 }
 
 .card-tag {
@@ -474,18 +467,33 @@ input::placeholder {
   max-width: 150px;
 }
 
+.card-menu {
+  cursor: pointer;
+  position: relative;
+  height: 400px;
+}
+
+.card-menu .card-text {
+  width: 80%;
+  padding: 44px 0 34px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
 .card-buttons {
   display: flex;
   margin-top: 24px;
   flex-grow: 1;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .card-price-bold {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 20px;
   line-height: 32px;
-  margin-left: 30px;
+  margin-left: 60px;
 }
 
 .ingredients {

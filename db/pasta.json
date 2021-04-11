@@ -1,0 +1,44 @@
+[
+  {
+    "id": "pa1",
+    "name": "Balkan cheese",
+    "description": "Tomatoes, kalamata olives and balkan cheese",
+    "price": 65,
+    "image": "img/pasta/pasta1.jpg"
+  },
+  {
+    "id": "pa2",
+    "name": "Sweet potato and mushroom",
+    "description": "Baked sweet potato with cream and mushroom",
+    "price": 65,
+    "image": "img/pasta/pasta2.jpg"
+  },
+  {
+    "id": "pa3",
+    "name": "Hot Tomato",
+    "description": "Hot tomato and garlic pasta",
+    "price": 65,
+    "image": "img/pasta/pasta3.jpg"
+  },
+  {
+    "id": "pa4",
+    "name": "Parsley and garlic",
+    "description": "Parsley, garlic and olive oil",
+    "price": 65,
+    "image": "img/pasta/pasta4.jpg"
+  },
+  {
+    "id": "pa5",
+    "name": "Four Cheeses",
+    "description": "Cream, roquefort, cheddar and parmesan",
+    "price": 65,
+    "image": "img/pasta/pasta5.jpg"
+  },
+  {
+    "id": "pa6",
+    "name": "Tomato Sauce",
+    "description": "Italian plum tomatoes slow cooked",
+    "price": 65,
+    "image": "img/pasta/pasta6.jpg"
+  }
+]

@@ -46,7 +46,63 @@ time_of_delivery: timeOfDelivery }) {
   `;
   cardRestaurant.insertAdjacentHTML('beforeend', card);
   cardsRestaurants.insertAdjacentElement('beforeend', cardRestaurant);
-};
+}
+
+function createCardGood({ description, id, name, price, image }) {
+
+  const card = document.createElement('div');
+  card.className = 'card card-menu';
+  card.insertAdjacentHTML('beforeend', `
+              <div class="card-img-wrap">
+                <img src=${image} alt="${name}" class="card-img"/>
+              </div>
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">${name}</h3>
+                </div>
+                <div class="card-info">
+                  <div class="ingredients">${description}
+                  </div>
+                </div>
+                <div class="card-buttons">
+                  <button class="button button-primary button-add-cart" id=${id}>
+                    <span class="button-card-text">Add to cart</span>
+                    <span class="button-cart-svg"></span>
+                  </button>
+                  <strong class="card-price card-price-bold">${price} ILS</strong>
+                </div>
+              </div>
+  `);
+  
+  cardsMenu.insertAdjacentElement('beforeend', card);
+}
+
+function openGoods(event) {
+  const target = event.target;
+  if (true) {
+    const restaurant = target.closest('.card-restaurant');
+    if (restaurant) {
+        cardsMenu.textContent = '';
+        containerPromo.classList.add('hide');
+        restaurants.classList.add('hide');
+        menu.classList.remove('hide');
+
+        const { name, kitchen, stars, price } = restaurant.info;
+
+        restaurantTitle.textContent = name;
+        restaurantRating.textContent = stars;
+        restaurantPrice.textContent = `From ${price} ILS`;
+        restaurantCategory.textContent = kitchen;
+
+        getData(`./db/${restaurant.products}`).then(function(data) {
+        data.forEach(createCardGood);
+      });
+    }
+  // } else {
+  //   toggleModalAuth();
+  // }
+  }
+}
 
 function init() {
   getData('./db/partners.json').then(function(data) {
@@ -70,12 +126,12 @@ function init() {
 
   // close.addEventListener("click", toggleModal);
 
-  // cardsRestaurants.addEventListener('click', openGoods);
-  // logo.addEventListener('click', function() {
-  //     containerPromo.classList.remove('hide');
-  //     restaurants.classList.remove('hide');
-  //     menu.classList.add('hide');
-  // })
+  cardsRestaurants.addEventListener('click', openGoods);
+  logo.addEventListener('click', function() {
+      containerPromo.classList.remove('hide');
+      restaurants.classList.remove('hide');
+      menu.classList.add('hide');
+  })
 
   // checkAuth();
 
@@ -131,7 +187,7 @@ function init() {
 const swiper = new Swiper('.swiper-container', {
   sliderPerView: 1,
   loop: true,
-  autoplay: true,
+  // autoplay: true,
   effect: 'fade',
   pagination: {
     el: ('.swiper-pagination'),
