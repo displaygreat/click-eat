@@ -470,13 +470,13 @@ input::placeholder {
 .card-menu {
   cursor: pointer;
   position: relative;
-  height: 400px;
+  height: 460px;
 }
 
 .card-menu .card-text {
   width: 80%;
-  padding: 44px 0 34px;
-  height: 230px;
+  padding: 24px 0 34px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -486,7 +486,7 @@ input::placeholder {
   display: flex;
   margin-top: 24px;
   flex-grow: 1;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .card-price-bold {
