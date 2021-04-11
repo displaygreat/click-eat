@@ -1,44 +1,44 @@
 [
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "su1",
+    "name": "Tobiko and Spicy Tuna Wrap",
+    "description": "Spicy tuna, Japanese mayonnaise, avocado and tobiko wrapped in tuna slice",
+    "price": 72,
     "image": "img/sushi/sushi1.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "su2",
+    "name": "Rainbow",
+    "description": "Spicy tuna and avocado wrapped in tuna, salmon, sea bass, avocado and tobiko eggs",
+    "price": 69,
     "image": "img/sushi/sushi2.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "su3",
+    "name": "Tsunami Roll Tuna",
+    "description": "Spicy tuna, asparagus and cucumber, wrapped in seared salmon with sweet potato chips",
+    "price": 69,
     "image": "img/sushi/sushi3.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "su4",
+    "name": "Vegetarian Caterpillar",
+    "description": "Avocado, tamago, carrot and cucumber wrapped in avocado",
+    "price": 49,
     "image": "img/sushi/sushi4.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "su5",
+    "name": "Tobiko Roll",
+    "description": "Spicy salmon, tempura, avocado and arugula leaves topped with tobiko",
+    "price": 59,
     "image": "img/sushi/sushi5.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "su6",
+    "name": "Fish & Chips Roll",
+    "description": "Denise in tempura, avocado, chives and cucumber topped with sweet potato chips",
+    "price": 58,
     "image": "img/sushi/sushi6.jpg"
   }
 ]

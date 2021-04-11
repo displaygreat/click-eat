@@ -1,44 +1,44 @@
 [
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "pi1",
+    "name": "Greek Family Pizza",
+    "description": "Onion, kalamata olives, cherry tomatoes, bulgarian cheese and Zzatar",
+    "price": 75,
     "image": "img/pizza/pizza1.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "pi2",
+    "name": "Rustic Family Pizza",
+    "description": "Fresh mushrooms, green olives and corn",
+    "price": 75,
     "image": "img/pizza/pizza2.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "pi3",
+    "name": "Spicy Family Pizza",
+    "description": "Chilli, tomatoes and double cheese",
+    "price": 75,
     "image": "img/pizza/pizza3.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "pi4",
+    "name": "Mediterranean Family Pizza",
+    "description": "Tuna, onion, corn and a hard-boiled egg",
+    "price": 75,
     "image": "img/pizza/pizza4.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "pi5",
+    "name": "Italian Family Pizza",
+    "description": "Tomatoes, anchovy and bulgarian cheese",
+    "price": 75,
     "image": "img/pizza/pizza5.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "pi6",
+    "name": "Gluten Free Pizza",
+    "description": "Fresh mushrooms, green olives and corn",
+    "price": 75,
     "image": "img/pizza/pizza6.jpg"
   }
 ]

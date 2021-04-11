@@ -109,77 +109,12 @@ function init() {
   data.forEach(createCardRestaurants);
   });
 
-  // buttonClearCart.addEventListener('click', function() {
-  //   cart.length = 0;
-  //   renderCart();
-  //   toggleModal();
-  // })
-
-  // modalBody.addEventListener('click', changeCount);
-
-  // cartButton.addEventListener("click", function() {
-  //   renderCart();
-  //   toggleModal();
-  // });
-
-  // cardsMenu.addEventListener('click', addToCart);
-
-  // close.addEventListener("click", toggleModal);
-
   cardsRestaurants.addEventListener('click', openGoods);
   logo.addEventListener('click', function() {
       containerPromo.classList.remove('hide');
       restaurants.classList.remove('hide');
       menu.classList.add('hide');
   })
-
-  // checkAuth();
-
-  // inputSearch.addEventListener('keypress', function(event) {
-  //   if(event.charCode === 13) {
-  //     const value = event.target.value.trim();
-
-  //     if (!value) {
-  //       event.target.style.backgroundColor = "#FF0000";
-  //       event.target.value = '';
-  //       setTimeout(function() {
-  //         event.target.style.backgroundColor = '';
-  //       }, 1500)
-  //       return;
-  //     }
-    
-  // getData('./db/partners.json')
-  //   .then(function(data) {
-  //   return data.map(function(partner) {
-  //     return partner.products;
-  //     });
-  //   })
-  //   .then(function(linksProduct) {
-  //       cardsMenu.textContent = '';
-
-  //       linksProduct.forEach(function(link) {
-  //         getData(`./db/${link}`)
-  //         .then(function(data) {
-           
-  //           const resultSearch = data.filter(function(item) {
-  //             const name = item.name.toLowerCase()
-  //             return name.includes(value.toLowerCase());
-  //           })
-
-  //           containerPromo.classList.add('hide');
-  //           restaurants.classList.add('hide');
-  //           menu.classList.remove('hide');
-
-  //           restaurantTitle.textContent = 'Результат поиска';
-  //           restaurantRating.textContent = '';
-  //           restaurantPrice.textContent = '';
-  //           restaurantCategory.textContent = 'разная кухня';
-  //           resultSearch.forEach(createCardGood);
-  //         })
-  //       });
-  //     })
-  //   }
-  // })
   
 }
 
@@ -187,7 +122,7 @@ function init() {
 const swiper = new Swiper('.swiper-container', {
   sliderPerView: 1,
   loop: true,
-  // autoplay: true,
+  autoplay: true,
   effect: 'fade',
   pagination: {
     el: ('.swiper-pagination'),

@@ -1,44 +1,44 @@
 [
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "bu1",
+    "name": "Crunch Burger",
+    "description": "Fried chicken in a bun with pineapple roasted with sweet chili, herbs aioli, iceberg lettuce, homemade pickles and sriracha sauce",
+    "price": 76,
     "image": "img/burger/burger1.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "bu2",
+    "name": "Latino Burger",
+    "description": "Beef burger, guacamole, fried egg, crispy onion, spicy salsa and chipotle aioli",
+    "price": 72,
     "image": "img/burger/burger2.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "bu3",
+    "name": "Palawan Burger",
+    "description": "Beef burger with roasted lamb pancetta, roasted pineapple, arugula, homemade pickles, mustard aioli, sweet chilli, spicy sriracha and crispy onion",
+    "price": 74,
     "image": "img/burger/burger3.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "bu4",
+    "name": "Butchers Burger",
+    "description": "Beef burger, arugula, crispy onion, homemade pickles, onion and red wine jam and mustard aioli",
+    "price": 76,
     "image": "img/burger/burger4.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "bu5",
+    "name": "Double America Burger",
+    "description": "Two beef patties with gouda cheese, crispy onion, homemade pickles and BBQ sauce",
+    "price": 77,
     "image": "img/burger/burger5.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "bu6",
+    "name": "Garden Burger",
+    "description": "Mushroom and halloumi cheese patty, served with iceberg lettuce, tomato, onion and homemade pickles",
+    "price": 46,
     "image": "img/burger/burger6.jpg"
   }
 ]

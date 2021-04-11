@@ -1,44 +1,44 @@
 [
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "de1",
+    "name": "Belgian Waffles",
+    "description": "Trio waffles served with pieces of white and milk chocolate chunks on top and vanilla ice cream and chocolate fondue on side",
+    "price": 79,
     "image": "img/dessert/dessert1.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "de2",
+    "name": "Crack Pie",
+    "description": "2 pieces of buttery pie in crust cookies, served alongside vanilla ice cream and white chocolate fondue",
+    "price": 82,
     "image": "img/dessert/dessert2.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "de3",
+    "name": "Cheesecake",
+    "description": "Two pieces of cheesecake, served with vanilla ice cream and chocolate fondue",
+    "price": 69,
     "image": "img/dessert/dessert3.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "de4",
+    "name": "Munchie - Gluten free",
+    "description": "Two pieces of layered almond crunch, peanut butter cream, toffee and dark chocolate ganache coated with chocolate crust. Served with vanilla ice cream and chocolate fondue",
+    "price": 79,
     "image": "img/dessert/dessert4.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "de5",
+    "name": "Milky Max Trio",
+    "description": "The milky trio, Oreo, banoffee and lotus flavor. Served with a jar of milk fragments and a jar of waffle balls",
+    "price": 79,
     "image": "img/dessert/dessert5.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "de6",
+    "name": "Six Cookies",
+    "description": "Chocolate Puree, Oreo and Chocolate Chips 2 of each kind, served with vanilla ice cream and white chocolate fondue",
+    "price": 72,
     "image": "img/dessert/dessert6.jpg"
   }
 ]

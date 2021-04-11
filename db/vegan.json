@@ -1,44 +1,44 @@
 [
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "ve1",
+    "name": "Full of Protein",
+    "description": "Three types of quinoa, two types of lentils, chickpeas, sweet potatoes caramelized with spices and chopped coriander. Served with a tzatziki on the side",
+    "price": 56,
     "image": "img/vegan/vegan1.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "ve2",
+    "name": "Yeast Pastry",
+    "description": "Salty yeast pastry with different fillings - comes with tzatziki or tahini",
+    "price": 35,
     "image": "img/vegan/vegan2.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "ve3",
+    "name": "Shimi Sandwich",
+    "description": "Patties with seaweed in a spicy tomato sauce on pomegranate mayonnaise - comes in the house ciabatta",
+    "price": 56,
     "image": "img/vegan/vegan3.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "ve4",
+    "name": "McCartney",
+    "description": "Shepherd's pie with vegan \"meat\", vegetables, legumes, mashed potatoes and rich gravy",
+    "price": 42,
     "image": "img/vegan/vegan4.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "ve5",
+    "name": "Fungi Ravioli",
+    "description": "Gluten-free pasta with mushrooms, onions, garlic, pesto, soy-coconut cream.",
+    "price": 62,
     "image": "img/vegan/vegan5.jpg"
   },
   {
-    "id": "",
-    "name": "",
-    "description": "",
-    "price": 65,
+    "id": "ve6",
+    "name": "Mint Pea Soup",
+    "description": "Dried peas, fresh peas, onions, garlic, mint and coconut cream - greenish and delicious",
+    "price": 55,
     "image": "img/vegan/vegan6.jpg"
   }
 ]
