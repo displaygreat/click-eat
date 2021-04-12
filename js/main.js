@@ -116,7 +116,6 @@ function notAuthorized() {
   closeAuth.addEventListener("click", toggleModalAuth);
   logInForm.addEventListener("submit", logIn);
   modalAuth.addEventListener("click", function (event) {
-    console.log(event.target);
     if (event.target.classList.contains("is-open")) {
       toggleModalAuth();
     }
@@ -198,7 +197,7 @@ function createCardGood({ description, id, name, price, image }) {
 
 function openGoods(event) {
   const target = event.target;
-  if (true) {
+  if (login) {
     const restaurant = target.closest(".card-restaurant");
     if (restaurant) {
       cardsMenu.textContent = "";
@@ -217,9 +216,8 @@ function openGoods(event) {
         data.forEach(createCardGood);
       });
     }
-    // } else {
-    //   toggleModalAuth();
-    // }
+  } else {
+    toggleModalAuth();
   }
 }
 
