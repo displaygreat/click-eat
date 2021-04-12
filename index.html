@@ -15,7 +15,7 @@
   <div class="container">
     <header class="header">
       <a class="logo">
-        <img src="img/click eat-logo-orange.png" alt="Logo" />
+        <img src="img/logo.png" alt="Logo" />
       </a>
       <label class="address">
         <input type="text" class="input input-address" placeholder="Enter delivery address" />
@@ -100,9 +100,7 @@
         <div class="section-heading">
           <h2 class="section-title restaurant-title">Pizza Garlik</h2>
           <div class="card-info">
-            <div class="rating">
-              4.5
-            </div>
+            <div class="rating">4.5</div>
             <div class="price">From 65 ILS</div>
             <div class="category">Pizza</div>
           </div>
@@ -113,9 +111,59 @@
         </div>
         <!-- /.cards -->
       </section>
+    </div>
+    <!-- /.container -->
   </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-block">
+        <img src="img/logo.png" alt="logo" class="logo footer-logo" />
+        <nav class="footer-nav">
+          <a href="#" class="footer-link">Ресторанам </a>
+          <a href="#" class="footer-link">Курьерам</a>
+          <a href="#" class="footer-link">Пресс-центр</a>
+          <a href="#" class="footer-link">Контакты</a>
+        </nav>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" class="social-link"><img src="img/icons/facebook.svg"
+              alt="facebook" /></a>
+          <a href="https://instagram.com" target="_blank" class="social-link"><img src="img/icons/instagram.svg"
+              alt="instagram" /></a>
+        </div>
+        <!-- /.social-links -->
+      </div>
+      <!-- /.footer-block -->
+    </div>
+  </footer>
 
-  <script src="js/main.js"></script>
+  <div class="modal-auth">
+    <div class="modal-dialog modal-dialog-auth">
+      <button class="close-auth">&times;</button>
+      <form id="logInForm">
+        <fieldset class="modal-body">
+          <legend class="modal-title">Create account</legend>
+          <label class="label-auth">
+            <span>Login</span>
+            <input id="login" type="text">
+          </label>
+          <label class="label-auth">
+            <span>Password</span>
+            <input id="password" type="password">
+          </label>
+        </fieldset>
+        <!-- /.modal-body -->
+        <div class="modal-footer">
+          <div class="footer-buttons">
+            <button class="button button-primary button-login" type="submit">Sign up</button>
+          </div>
+        </div>
+      </form>
+      <!-- /.modal-footer -->
+    </div>
+    <!-- /.modal-dialog -->
+
+    <script src="js/desabledScroll.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
