@@ -85,6 +85,7 @@ function authorized() {
     containerPromo.classList.remove("hide");
     restaurants.classList.remove("hide");
     menu.classList.add("hide");
+    inputSearch.value = "";
     checkAuth();
   }
 
@@ -228,32 +229,36 @@ function openGoods(event) {
 }
 
 function addToCart(event) {
-  const target = event.target;
+  if (login) {
+    const target = event.target;
 
-  const buttonAddToCart = target.closest(".button-add-cart");
-  if (buttonAddToCart) {
-    const card = target.closest(".card");
-    const imgUrl = card.querySelector(".card-img").getAttribute("src");
-    const title = card.querySelector(".card-title-reg").textContent;
-    const cost = card.querySelector(".card-price").textContent;
-    const id = buttonAddToCart.id;
+    const buttonAddToCart = target.closest(".button-add-cart");
+    if (buttonAddToCart) {
+      const card = target.closest(".card");
+      const imgUrl = card.querySelector(".card-img").getAttribute("src");
+      const title = card.querySelector(".card-title-reg").textContent;
+      const cost = card.querySelector(".card-price").textContent;
+      const id = buttonAddToCart.id;
 
-    const food = cart.find(function (item) {
-      return item.id === id;
-    });
-
-    if (food) {
-      food.count += 1;
-    } else {
-      cart.push({
-        id: id,
-        image: imgUrl,
-        title: title,
-        cost: cost,
-        count: 1,
+      const food = cart.find(function (item) {
+        return item.id === id;
       });
+
+      if (food) {
+        food.count += 1;
+      } else {
+        cart.push({
+          id: id,
+          image: imgUrl,
+          title: title,
+          cost: cost,
+          count: 1,
+        });
+      }
+      saveCart();
     }
-    saveCart();
+  } else {
+    toggleModalAuth();
   }
 }
 
