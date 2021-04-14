@@ -136,19 +136,47 @@
     </div>
   </footer>
 
-  <div class="modal-auth">
+  <div class="modal modal-cart">
+    <div class="modal-dialog modal-dialog-cart">
+      <div class="modal-header">
+        <h3 class="section-title modal-title">Cart</h3>
+        <button class="close close-cart">&times;</button>
+      </div>
+      <!-- /.modal-header -->
+      <div class="modal-body">
+
+      </div>
+      <!-- /.modal-body -->
+      <div class="modal-footer">
+        <div class="total">
+          <span class="total-text">Total price</span>
+          <span class="total-pricetag">125 ILS</span>
+        </div>
+        <div class="footer-buttons">
+          <button class="button button-primary">Complete order</button>
+          <button class="button button-clear clear-cart">Clear cart</button>
+        </div>
+      </div>
+      <!-- /.modal-footer -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <div class="modal modal-auth">
     <div class="modal-dialog modal-dialog-auth">
-      <button class="close-auth">&times;</button>
-      <form id="logInForm">
+      <div class="modal-header">
+        <button class="close-auth">&times;</button>
         <h2 class="section-title modal-title">Create account</h2>
+      </div>
+      <form id="logInForm">
         <div class="modal-body">
           <label class="label-auth">
             <span>Login</span>
-            <input id="login" type="text">
+            <input id="login" class="input-auth" type="text">
           </label>
           <label class="label-auth">
             <span>Password</span>
-            <input id="password" type="password">
+            <input id="password" class="input-auth" type="password">
           </label>
           <button class="button button-primary button-login" type="submit">Sign up</button>
         </div>
