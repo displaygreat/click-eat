@@ -610,6 +610,10 @@ input::placeholder {
 
 .modal-title {
   padding: 30px 40px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  margin-right: 120px;
 }
 
 .modal-body {
@@ -657,12 +661,13 @@ input::placeholder {
 
 .close-auth,
 .close-cart {
-  font-size: 36px;
+  font-size: 32px;
   border: none;
   background-color: transparent;
   position: absolute;
   top: 10px;
   right: 20px;
+  color: #8c8c8c;
 }
 
 .food-row {
@@ -771,4 +776,104 @@ input::placeholder {
 .button-clear:hover {
   background-color: #fa4a0c;
   color: #f6f6f9;
+}
+
+@media (max-width: 1260px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    max-width: inherit;
+    width: 96%;
+  }
+  .card {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 560px) {
+  .cards {
+    justify-content: center;
+  }
+  .card {
+    flex-basis: 92%;
+  }
+  .promo-shape {
+    border: none;
+    width: 100%;
+    height: 400px;
+    background-color: #f29030;
+  }
+  .pizza,
+  .sushi,
+  .burger,
+  .dessert {
+    background: none;
+  }
+  .promo-title {
+    font-size: 36px;
+  }
+  .section-title {
+    font-size: 28px;
+    margin: 20px auto;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .user-name {
+    flex-basis: 100%;
+    margin: 20px 0;
+  }
+  .button-cart,
+  .button-out {
+    width: 70%;
+    justify-content: center;
+  }
+  .button-cart {
+    margin-bottom: 20px;
+  }
+  .address {
+    order: 3;
+    margin-top: 20px;
+  }
+  .section-heading {
+    flex-direction: column;
+  }
+  .search {
+    margin-left: 0;
+  }
+  .restaurants {
+    margin-top: 20px;
+  }
+  .menu {
+    margin-top: 0;
+  }
+  .footer {
+    padding: 0 0 60px;
+  }
+  .footer-block {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0 0 20px;
+  }
 }

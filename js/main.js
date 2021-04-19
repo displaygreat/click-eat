@@ -310,6 +310,18 @@ function changeCount(event) {
   }
 }
 
+//slider
+const swiper = new Swiper(".swiper-container", {
+  sliderPerView: 1,
+  loop: true,
+  autoplay: true,
+  effect: "fade",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
 function init() {
   getData("./db/partners.json").then(function (data) {
     data.forEach(createCardRestaurants);
@@ -376,17 +388,5 @@ function init() {
     }
   });
 }
-
-//slider
-const swiper = new Swiper(".swiper-container", {
-  sliderPerView: 1,
-  loop: true,
-  autoplay: true,
-  effect: "fade",
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
 
 init();
