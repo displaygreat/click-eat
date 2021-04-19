@@ -780,14 +780,31 @@ input::placeholder {
 
 @media (max-width: 1260px) {
   .container {
-    max-width: 900px;
+    max-width: inherit;
+    width: 92%;
+  }
+  .card {
+    flex-basis: 48%;
   }
 }
 
 @media (max-width: 960px) {
-  .container {
-    max-width: inherit;
-    width: 92%;
+  .header {
+    flex-wrap: wrap;
+  }
+  .logo {
+    order: 1;
+  }
+  .buttons {
+    flex-basis: 80%;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    order: 2;
+  }
+  .address {
+    order: 3;
+    flex: 0.6;
+    margin: 0 auto;
   }
   .promo-shape {
     border: none;
@@ -810,9 +827,6 @@ input::placeholder {
     background: none;
     background-color: #c35355;
   }
-  .card {
-    flex-basis: 48%;
-  }
 }
 
 @media (max-width: 760px) {
@@ -822,12 +836,15 @@ input::placeholder {
   }
 }
 
+@media (max-width: 668px) {
+  .card {
+    flex-basis: 92%;
+  }
+}
+
 @media (max-width: 560px) {
   .cards {
     justify-content: center;
-  }
-  .card {
-    flex-basis: 92%;
   }
   .promo-title {
     font-size: 36px;
@@ -860,7 +877,7 @@ input::placeholder {
     margin: 20px auto 0;
   }
   .address {
-    order: 3;
+    flex: 0.8;
     margin-top: 20px;
   }
   .section-heading {
@@ -912,7 +929,7 @@ input::placeholder {
   }
   .food-row,
   .modal-dialog {
-    min-width: 280px;
+    min-width: 92%;
   }
   .card-thumb-wrap {
     margin: 0 auto;
