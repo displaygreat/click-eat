@@ -796,7 +796,7 @@ input::placeholder {
     order: 1;
   }
   .buttons {
-    flex-basis: 80%;
+    flex-basis: 82%;
     justify-content: flex-end;
     margin-bottom: 30px;
     order: 2;
