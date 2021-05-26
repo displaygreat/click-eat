@@ -1,5 +1,7 @@
 "use strict";
 
+const API_KEY = "AIzaSyCqqdSOuKY6e00Cq937n_1ExqX9k76nWGw";
+
 const cartButton = document.querySelector("#cart-button");
 const modal = document.querySelector(".modal");
 const close = document.querySelector(".close");

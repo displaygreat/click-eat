@@ -9,6 +9,16 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    let autocomplete;
+    function initAutocomplete() {
+      let input = document.getElementById("autocomplete");
+      console.log(input);
+      autocomplete = new google.maps.places.Autocomplete(input);
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvLiOAGqpoE8YPuSWjmNpjguGOlOmu9TE&libraries=places&callback=initAutocomplete"></script>
 </head>
 
 <body>
@@ -18,7 +28,7 @@
         <img src="img/logo.png" alt="Logo" />
       </a>
       <label class="address">
-        <input type="text" class="input input-address" placeholder="Enter delivery address" />
+        <input id="autocomplete" type="text" class="input input-address" placeholder="Enter delivery address" />
       </label>
       <div class="buttons">
         <span class="user-name"></span>
@@ -184,6 +194,7 @@
       </form>
     </div>
     <!-- /.modal-dialog -->
+
 
     <script src="js/desabledScroll.js"></script>
     <script src="js/main.js"></script>
