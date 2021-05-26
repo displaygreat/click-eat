@@ -26,6 +26,12 @@ const inputSearch = document.querySelector(".input-search");
 const modalBody = document.querySelector(".modal-body");
 const modalPrice = document.querySelector(".total-pricetag");
 const buttonClearCart = document.querySelector(".clear-cart");
+const inputAddress = document.querySelector(".input-address");
+const modalServer = document.querySelector(".modal-server");
+const serverTitle = document.querySelector(".server-title");
+const serverText = document.querySelector(".server-text");
+const closeServer = document.querySelector(".close-server");
+const buttonServer = document.querySelector(".button-server");
 
 let login = localStorage.getItem("clickEat");
 
@@ -106,7 +112,7 @@ function notAuthorized() {
     event.preventDefault();
     if (validName(loginInput.value)) {
       login = loginInput.value;
-      localStorage.setItem("clickEat", login);
+      localStorage.setItem(`clickEat_${login}_login`, login);
       toggleModalAuth();
       downloadCart();
       buttonAuth.removeEventListener("click", toggleModalAuth);
@@ -312,6 +318,62 @@ function changeCount(event) {
   }
 }
 
+function addDeliveryAddress() {
+  inputAddress.addEventListener("keypress", (e) => {
+    let address = e.target.value;
+    if (e.key === "Enter") {
+      localStorage.setItem(`clickEat_${login}_address`, address);
+      fetchAddressData({ user: login, address: address });
+    }
+  });
+}
+
+function closeModalServer() {
+  modalServer.classList.toggle("is-open");
+  toggleModalServer();
+}
+
+function toggleModalServer() {
+  if (modalServer.classList.contains("is-open")) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
+}
+
+function fetchAddressData(data) {
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((res) => {
+      console.log(res);
+      if (!res || Object.keys(res).length === 0) {
+        modalServer.classList.add("is-open");
+        serverText.textContent =
+          "Failed to add delivery address. Try again later.";
+        toggleModalServer();
+        closeServer.addEventListener("click", closeModalServer);
+        buttonServer.addEventListener("click", closeModalServer);
+        throw new Error(`Error on send request!`);
+      } else {
+        console.log(res);
+        modalServer.classList.add("is-open");
+        serverText.textContent = "Your delivery address was added";
+        toggleModalServer();
+        closeServer.addEventListener("click", closeModalServer);
+        buttonServer.addEventListener("click", closeModalServer);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 //slider
 const swiper = new Swiper(".swiper-container", {
   sliderPerView: 1,
@@ -354,6 +416,8 @@ function init() {
   });
 
   checkAuth();
+
+  addDeliveryAddress();
 
   inputSearch.addEventListener("keypress", function (event) {
     if (event.charCode === 13) {

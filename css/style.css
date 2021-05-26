@@ -596,7 +596,8 @@ input::placeholder {
 }
 
 .modal-dialog-auth,
-.modal-dialog-cart {
+.modal-dialog-cart,
+.modal-dialog-server {
   width: auto;
   position: relative;
 }
@@ -660,7 +661,8 @@ input::placeholder {
 }
 
 .close-auth,
-.close-cart {
+.close-cart,
+.close-server {
   font-size: 32px;
   border: none;
   background-color: transparent;
@@ -776,6 +778,10 @@ input::placeholder {
 .button-clear:hover {
   background-color: #fa4a0c;
   color: #f6f6f9;
+}
+
+.server-text {
+  margin-bottom: 40px;
 }
 
 @media (max-width: 1260px) {

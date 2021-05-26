@@ -9,7 +9,8 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <script>
+  <!-- Scripts for Google Maps Autocomplete.This feature is not currently enabled because this project has not billing account on Google Maps Platform -->
+  <!-- <script>
     let autocomplete;
     function initAutocomplete() {
       let input = document.getElementById("autocomplete");
@@ -18,7 +19,7 @@
     }
   </script>
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvLiOAGqpoE8YPuSWjmNpjguGOlOmu9TE&libraries=places&callback=initAutocomplete"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvLiOAGqpoE8YPuSWjmNpjguGOlOmu9TE&libraries=places&callback=initAutocomplete"></script> -->
 </head>
 
 <body>
@@ -194,10 +195,25 @@
       </form>
     </div>
     <!-- /.modal-dialog -->
+  </div>
 
+  <div class="modal modal-server">
+    <div class="modal-dialog modal-dialog-server">
+      <div class="modal-header">
+        <button class="close close-server">&times;</button>
+        <h2 class="section-title modal-title server-title"></h2>
+      </div>
+      <div class="modal-body">
+        <p class="server-text"></p>
+        <button class="button button-primary button-server" type="submit">Close</button>
+      </div>
+      <!-- /.modal-body -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
 
-    <script src="js/desabledScroll.js"></script>
-    <script src="js/main.js"></script>
+  <script src="js/desabledScroll.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
