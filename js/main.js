@@ -23,6 +23,7 @@ const restaurantRating = document.querySelector(".rating");
 const restaurantPrice = document.querySelector(".price");
 const restaurantCategory = document.querySelector(".category");
 const inputSearch = document.querySelector(".input-search");
+const modalDialog = document.querySelector(".modal-dialog");
 const modalBody = document.querySelector(".modal-body");
 const modalPrice = document.querySelector(".total-pricetag");
 const buttonClearCart = document.querySelector(".clear-cart");
@@ -32,30 +33,47 @@ const serverTitle = document.querySelector(".server-title");
 const serverText = document.querySelector(".server-text");
 const closeServer = document.querySelector(".close-server");
 const buttonServer = document.querySelector(".button-server");
+const completeOrder = document.querySelector(".complete-order");
+
+const serverUrl = "https://jsonplaceholder.typicode.com/posts";
+const databaseUrl = "./db/partners.json";
 
 let login = localStorage.getItem("clickEat");
 
-const cart = JSON.parse(localStorage.getItem(`clickEat_${login}`)) || [];
+const cart = JSON.parse(localStorage.getItem(`clickEat_${login}_cart`)) || [];
 
 function downloadCart() {
-  if (localStorage.getItem(`clickEat_${login}`)) {
-    const data = JSON.parse(localStorage.getItem(`clickEat_${login}`));
+  if (localStorage.getItem(`clickEat_${login}_cart`)) {
+    const data = JSON.parse(localStorage.getItem(`clickEat_${login}_cart`));
     cart.push(...data);
   }
 }
 
 function saveCart() {
-  localStorage.setItem(`clickEat_${login}`, JSON.stringify(cart));
+  localStorage.setItem(`clickEat_${login}_cart`, JSON.stringify(cart));
 }
 
-const getData = async function (url) {
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(`Error on ${url}, error status ${response.status}!`);
+async function getData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Error on ${url}, error status ${response.status}!`);
+    }
+    const json = response.json();
+    return json;
+  } catch (error) {
+    console.log(error);
   }
-  return await response.json();
-};
+}
+
+// const getData = async function (url) {
+//   const response = await fetch(url);
+
+//   if (!response.ok) {
+//     throw new Error(`Error on ${url}, error status ${response.status}!`);
+//   }
+//   return await response.json();
+// };
 
 function validName(str) {
   const regName = /^[a-zA-Z0-9-\.]{1,20}$/;
@@ -228,7 +246,7 @@ function openGoods(event) {
       restaurantCategory.textContent = kitchen;
 
       getData(`./db/${restaurant.products}`).then(function (data) {
-        data.forEach(createCardGood);
+        data?.forEach(createCardGood);
       });
     }
   } else {
@@ -318,41 +336,64 @@ function changeCount(event) {
   }
 }
 
-function addDeliveryAddress() {
-  inputAddress.addEventListener("keypress", (e) => {
-    let address = e.target.value;
-    if (e.key === "Enter") {
-      localStorage.setItem(`clickEat_${login}_address`, address);
-      fetchAddressData({ user: login, address: address });
+async function postData(url, data) {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    console.log(response);
+    if (!response) {
+      throw new Error("Error on send request!");
     }
-  });
-}
-
-function closeModalServer() {
-  modalServer.classList.toggle("is-open");
-  toggleModalServer();
-}
-
-function toggleModalServer() {
-  if (modalServer.classList.contains("is-open")) {
-    disableScroll();
-  } else {
-    enableScroll();
+    return await response.text();
+  } catch (error) {
+    console.log(error);
   }
 }
 
-function fetchAddressData(data) {
-  fetch("https://jsonplaceholder.typicode.com/posts", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  })
-    .then((response) => response.json())
+async function fetchCartData(data) {
+  console.log(data.length);
+  postData(serverUrl, data)
     .then((res) => {
       console.log(res);
-      if (!res || Object.keys(res).length === 0) {
+      if (data.length === 0 || Object.keys(res).length === 0) {
+        modalServer.classList.add("is-open");
+        serverText.textContent = "Failed to complete order. Try again later.";
+        toggleModalServer();
+        closeServer.addEventListener("click", closeModalServer);
+        buttonServer.addEventListener("click", closeModalServer);
+        throw new Error(`Error on send request!`);
+      } else {
+        console.log(res);
+        modalServer.classList.add("is-open");
+        serverText.textContent = "Your order was completed";
+        toggleModalServer();
+        closeServer.addEventListener("click", closeModalServer);
+        buttonServer.addEventListener("click", closeModalServer);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function setOrder() {
+  completeOrder.addEventListener("click", () => {
+    console.log(cart);
+    fetchCartData(cart);
+    toggleModal();
+  });
+}
+
+function fetchAddressData(data) {
+  postData(serverUrl, data)
+    .then((res) => {
+      console.log(res);
+      if (Object.keys(res).length === 0) {
         modalServer.classList.add("is-open");
         serverText.textContent =
           "Failed to add delivery address. Try again later.";
@@ -374,6 +415,30 @@ function fetchAddressData(data) {
     });
 }
 
+function setDeliveryAddress() {
+  inputAddress.addEventListener("keypress", (e) => {
+    let address = e.target.value;
+    if (e.key === "Enter") {
+      localStorage.setItem(`clickEat_${login}_address`, address);
+      fetchAddressData({ user: login, address: address });
+      inputAddress.value = "";
+    }
+  });
+}
+
+function closeModalServer() {
+  modalServer.classList.toggle("is-open");
+  toggleModalServer();
+}
+
+function toggleModalServer() {
+  if (modalServer.classList.contains("is-open")) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
+}
+
 //slider
 const swiper = new Swiper(".swiper-container", {
   sliderPerView: 1,
@@ -387,8 +452,8 @@ const swiper = new Swiper(".swiper-container", {
 });
 
 function init() {
-  getData("./db/partners.json").then(function (data) {
-    data.forEach(createCardRestaurants);
+  getData(databaseUrl).then(function (data) {
+    data?.forEach(createCardRestaurants);
   });
 
   buttonClearCart.addEventListener("click", function () {
@@ -417,13 +482,15 @@ function init() {
 
   checkAuth();
 
-  addDeliveryAddress();
+  setDeliveryAddress();
+
+  setOrder();
 
   inputSearch.addEventListener("keypress", function (event) {
     if (event.charCode === 13) {
       const value = event.target.value.trim();
 
-      getData("./db/partners.json")
+      getData(databaseUrl)
         .then(function (data) {
           return data.map(function (partner) {
             return partner.products;
