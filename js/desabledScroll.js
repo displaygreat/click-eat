@@ -1,6 +1,5 @@
-window.disableScroll = function() {
+window.disableScroll = function () {
   const widthScroll = window.innerWidth - document.body.offsetWidth;
-console.log('widthScroll: ', widthScroll);
   document.body.dataset.scrollY = window.scrollY;
   document.body.style.cssText = `
     position: fixed;
@@ -11,9 +10,9 @@ console.log('widthScroll: ', widthScroll);
     width: 100%;
     padding-right: ${widthScroll}px;
   `;
-}
+};
 
-window.enableScroll = function() {
-   document.body.style.cssText = ``;
-   window.scroll({top: document.body.scrollY});
-}
+window.enableScroll = function () {
+  document.body.style.cssText = ``;
+  window.scroll({ top: document.body.scrollY });
+};

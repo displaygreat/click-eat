@@ -66,15 +66,6 @@ async function getData(url) {
   }
 }
 
-// const getData = async function (url) {
-//   const response = await fetch(url);
-
-//   if (!response.ok) {
-//     throw new Error(`Error on ${url}, error status ${response.status}!`);
-//   }
-//   return await response.json();
-// };
-
 function validName(str) {
   const regName = /^[a-zA-Z0-9-\.]{1,20}$/;
   return regName.test(str);
@@ -82,6 +73,11 @@ function validName(str) {
 
 function toggleModal() {
   modal.classList.toggle("is-open");
+  if (modalAuth.classList.contains("is-open")) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
 }
 
 function toggleModalAuth() {
@@ -100,9 +96,16 @@ function clearForm() {
 
 function authorized() {
   function logOut() {
+    let keysToRemove = [
+      "clickEat",
+      `clickEat_${login}_cart`,
+      `clickEat_${login}_address`,
+    ];
+    for (let key of keysToRemove) {
+      localStorage.removeItem(key);
+    }
     login = null;
     cart.length = 0;
-    localStorage.removeItem("clickEat");
     buttonAuth.style.display = "";
     userName.style.display = "";
     buttonOut.style.display = "";
@@ -130,7 +133,7 @@ function notAuthorized() {
     event.preventDefault();
     if (validName(loginInput.value)) {
       login = loginInput.value;
-      localStorage.setItem(`clickEat_${login}_login`, login);
+      localStorage.setItem(`clickEat`, login);
       toggleModalAuth();
       downloadCart();
       buttonAuth.removeEventListener("click", toggleModalAuth);
