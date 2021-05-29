@@ -75,7 +75,10 @@ function validName(str) {
 function openModal(currentModal) {
   currentModal.classList.add("is-open");
   currentModal.addEventListener("click", (e) => {
-    if (!e.target.closest(".modal-dialog")) {
+    if (
+      !e.target.closest(".modal-dialog") &&
+      !e.target.classList.contains("counter-button")
+    ) {
       currentModal.classList.remove("is-open");
     }
   });
@@ -444,7 +447,7 @@ function init() {
   buttonClearCart.addEventListener("click", function (e) {
     cart.length = 0;
     renderCart();
-    closeModal(e);
+    // closeModal(e);
   });
 
   modalBody.addEventListener("click", changeCount);
