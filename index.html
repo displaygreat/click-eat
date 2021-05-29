@@ -23,6 +23,9 @@
 </head>
 
 <body>
+  <!-- <div class='spinner-wrapper'>
+    <div class="spinner"></div>
+  </div> -->
   <div class="container">
     <header class="header">
       <a class="logo" href='#'>
@@ -33,11 +36,11 @@
       </label>
       <div class="buttons">
         <span class="user-name"></span>
-        <button class="button button-primary button-auth">
+        <button class="button button-primary button-auth" data-button="button-auth">
           <span class="button-auth-svg"></span>
           <span class="button-text">LogIn</span>
         </button>
-        <button class="button button-cart" id="cart-button">
+        <button class="button button-cart" id="cart-button" data-button="button-cart">
           <span class="button-cart-svg"></span>
           <span class="button-text">Cart</span>
         </button>
@@ -176,7 +179,7 @@
   <div class="modal modal-auth">
     <div class="modal-dialog modal-dialog-auth">
       <div class="modal-header">
-        <button class="close-auth">&times;</button>
+        <button class="close close-auth">&times;</button>
         <h2 class="section-title modal-title">Create account</h2>
       </div>
       <form id="logInForm">
@@ -205,7 +208,7 @@
       </div>
       <div class="modal-body">
         <p class="server-text"></p>
-        <button class="button button-primary button-server" type="submit">Close</button>
+        <button class="button button-primary button-server">Close</button>
       </div>
       <!-- /.modal-body -->
     </div>

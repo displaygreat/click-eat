@@ -2,11 +2,13 @@
 
 const API_KEY = "AIzaSyCqqdSOuKY6e00Cq937n_1ExqX9k76nWGw";
 
-const cartButton = document.querySelector("#cart-button");
 const modal = document.querySelector(".modal");
-const close = document.querySelector(".close");
+const closeButtons = document.querySelectorAll(".close");
 const buttonAuth = document.querySelector(".button-auth");
+const buttonCart = document.querySelector(".button-cart");
 const modalAuth = document.querySelector(".modal-auth");
+const modalCart = document.querySelector(".modal-cart");
+const modalServer = document.querySelector(".modal-server");
 const closeAuth = document.querySelector(".close-auth");
 const logInForm = document.querySelector("#logInForm");
 const loginInput = document.querySelector("#login");
@@ -28,7 +30,6 @@ const modalBody = document.querySelector(".modal-body");
 const modalPrice = document.querySelector(".total-pricetag");
 const buttonClearCart = document.querySelector(".clear-cart");
 const inputAddress = document.querySelector(".input-address");
-const modalServer = document.querySelector(".modal-server");
 const serverTitle = document.querySelector(".server-title");
 const serverText = document.querySelector(".server-text");
 const closeServer = document.querySelector(".close-server");
@@ -71,17 +72,31 @@ function validName(str) {
   return regName.test(str);
 }
 
-function toggleModal() {
-  modal.classList.toggle("is-open");
-  if (modalAuth.classList.contains("is-open")) {
+function openModal(currentModal) {
+  currentModal.classList.add("is-open");
+  currentModal.addEventListener("click", (e) => {
+    if (!e.target.closest(".modal-dialog")) {
+      currentModal.classList.remove("is-open");
+    }
+  });
+}
+
+function closeModal(e) {
+  const activeModal = e.target.closest(".modal");
+  activeModal.classList.remove("is-open");
+  toggleBodyScroll(activeModal);
+}
+
+function toggleBodyScroll(activeModal) {
+  if (activeModal.classList.contains("is-open")) {
     disableScroll();
   } else {
     enableScroll();
   }
 }
 
-function toggleModalAuth() {
-  modalAuth.classList.toggle("is-open");
+function toggleModal() {
+  modal.classList.toggle("is-open");
   if (modalAuth.classList.contains("is-open")) {
     disableScroll();
   } else {
@@ -109,7 +124,7 @@ function authorized() {
     buttonAuth.style.display = "";
     userName.style.display = "";
     buttonOut.style.display = "";
-    cartButton.style.display = "";
+    buttonCart.style.display = "";
     buttonOut.removeEventListener("click", logOut);
     containerPromo.classList.remove("hide");
     restaurants.classList.remove("hide");
@@ -124,7 +139,7 @@ function authorized() {
   buttonAuth.style.display = "none";
   userName.style.display = "inline-block";
   buttonOut.style.display = "flex";
-  cartButton.style.display = "flex";
+  buttonCart.style.display = "flex";
   buttonOut.addEventListener("click", logOut);
 }
 
@@ -134,10 +149,9 @@ function notAuthorized() {
     if (validName(loginInput.value)) {
       login = loginInput.value;
       localStorage.setItem(`clickEat`, login);
-      toggleModalAuth();
+      closeModal(event);
       downloadCart();
-      buttonAuth.removeEventListener("click", toggleModalAuth);
-      closeAuth.removeEventListener("click", toggleModalAuth);
+      buttonAuth.removeEventListener("click", () => openModal(modalAuth));
       logInForm.removeEventListener("submit", logIn);
       logInForm.reset();
       checkAuth();
@@ -147,15 +161,9 @@ function notAuthorized() {
     }
   }
 
-  buttonAuth.addEventListener("click", toggleModalAuth);
+  buttonAuth.addEventListener("click", () => openModal(modalAuth));
   buttonAuth.addEventListener("click", clearForm);
-  closeAuth.addEventListener("click", toggleModalAuth);
   logInForm.addEventListener("submit", logIn);
-  modalAuth.addEventListener("click", function (event) {
-    if (event.target.classList.contains("is-open")) {
-      toggleModalAuth();
-    }
-  });
 }
 
 function checkAuth() {
@@ -253,7 +261,7 @@ function openGoods(event) {
       });
     }
   } else {
-    toggleModalAuth();
+    openModal(modalAuth);
   }
 }
 
@@ -287,7 +295,7 @@ function addToCart(event) {
       saveCart();
     }
   } else {
-    toggleModalAuth();
+    openModal(modalAuth);
   }
 }
 
@@ -363,20 +371,14 @@ async function fetchCartData(data) {
   postData(serverUrl, data)
     .then((res) => {
       console.log(res);
+      modalServer.classList.add("is-open");
+      openModal(modalServer);
+      buttonServer.addEventListener("click", (e) => closeModal(e));
       if (data.length === 0 || Object.keys(res).length === 0) {
-        modalServer.classList.add("is-open");
         serverText.textContent = "Failed to complete order. Try again later.";
-        toggleModalServer();
-        closeServer.addEventListener("click", closeModalServer);
-        buttonServer.addEventListener("click", closeModalServer);
         throw new Error(`Error on send request!`);
       } else {
-        console.log(res);
-        modalServer.classList.add("is-open");
         serverText.textContent = "Your order was completed";
-        toggleModalServer();
-        closeServer.addEventListener("click", closeModalServer);
-        buttonServer.addEventListener("click", closeModalServer);
       }
     })
     .catch((err) => {
@@ -385,10 +387,9 @@ async function fetchCartData(data) {
 }
 
 function setOrder() {
-  completeOrder.addEventListener("click", () => {
-    console.log(cart);
+  completeOrder.addEventListener("click", (e) => {
     fetchCartData(cart);
-    toggleModal();
+    closeModal(e);
   });
 }
 
@@ -396,21 +397,15 @@ function fetchAddressData(data) {
   postData(serverUrl, data)
     .then((res) => {
       console.log(res);
+      modalServer.classList.add("is-open");
+      openModal(modalServer);
+      buttonServer.addEventListener("click", (e) => closeModal(e));
       if (Object.keys(res).length === 0) {
-        modalServer.classList.add("is-open");
         serverText.textContent =
           "Failed to add delivery address. Try again later.";
-        toggleModalServer();
-        closeServer.addEventListener("click", closeModalServer);
-        buttonServer.addEventListener("click", closeModalServer);
         throw new Error(`Error on send request!`);
       } else {
-        console.log(res);
-        modalServer.classList.add("is-open");
         serverText.textContent = "Your delivery address was added";
-        toggleModalServer();
-        closeServer.addEventListener("click", closeModalServer);
-        buttonServer.addEventListener("click", closeModalServer);
       }
     })
     .catch((err) => {
@@ -427,19 +422,6 @@ function setDeliveryAddress() {
       inputAddress.value = "";
     }
   });
-}
-
-function closeModalServer() {
-  modalServer.classList.toggle("is-open");
-  toggleModalServer();
-}
-
-function toggleModalServer() {
-  if (modalServer.classList.contains("is-open")) {
-    disableScroll();
-  } else {
-    enableScroll();
-  }
 }
 
 //slider
@@ -459,22 +441,24 @@ function init() {
     data?.forEach(createCardRestaurants);
   });
 
-  buttonClearCart.addEventListener("click", function () {
+  buttonClearCart.addEventListener("click", function (e) {
     cart.length = 0;
     renderCart();
-    toggleModal();
+    closeModal(e);
   });
 
   modalBody.addEventListener("click", changeCount);
 
-  cartButton.addEventListener("click", function () {
+  buttonCart.addEventListener("click", function () {
     renderCart();
-    toggleModal();
+    openModal(modalCart);
   });
 
   cardsMenu.addEventListener("click", addToCart);
 
-  close.addEventListener("click", toggleModal);
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", (e) => closeModal(e));
+  });
 
   cardsRestaurants.addEventListener("click", openGoods);
   logo.addEventListener("click", function () {
@@ -526,3 +510,13 @@ function init() {
 }
 
 init();
+
+// function loadContent() {
+//   let spinnerWrapper = document.querySelector(".spinner-wrapper");
+
+//   window.addEventListener("load", function () {
+//     // spinnerWrapper.style.display = "none";
+//     spinnerWrapper.parentElement.removeChild(spinnerWrapper);
+//   });
+// }
+// loadContent();
