@@ -30,7 +30,6 @@ const modalBody = document.querySelector(".modal-body");
 const modalPrice = document.querySelector(".total-pricetag");
 const buttonClearCart = document.querySelector(".clear-cart");
 const inputAddress = document.querySelector(".input-address");
-const serverTitle = document.querySelector(".server-title");
 const serverText = document.querySelector(".server-text");
 const closeServer = document.querySelector(".close-server");
 const buttonServer = document.querySelector(".button-server");
