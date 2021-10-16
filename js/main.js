@@ -9,7 +9,6 @@ const buttonCart = document.querySelector(".button-cart");
 const modalAuth = document.querySelector(".modal-auth");
 const modalCart = document.querySelector(".modal-cart");
 const modalServer = document.querySelector(".modal-server");
-const closeAuth = document.querySelector(".close-auth");
 const logInForm = document.querySelector("#logInForm");
 const loginInput = document.querySelector("#login");
 const userName = document.querySelector(".user-name");
@@ -25,14 +24,12 @@ const restaurantRating = document.querySelector(".rating");
 const restaurantPrice = document.querySelector(".price");
 const restaurantCategory = document.querySelector(".category");
 const inputSearch = document.querySelector(".input-search");
-const modalDialog = document.querySelector(".modal-dialog");
 const modalBody = document.querySelector(".modal-body");
 const modalPrice = document.querySelector(".total-pricetag");
 const buttonClearCart = document.querySelector(".clear-cart");
 const inputAddress = document.querySelector(".input-address");
 const serverTitle = document.querySelector(".server-title");
 const serverText = document.querySelector(".server-text");
-const closeServer = document.querySelector(".close-server");
 const buttonServer = document.querySelector(".button-server");
 const completeOrder = document.querySelector(".complete-order");
 
@@ -92,15 +89,6 @@ function closeModal(e) {
 
 function toggleBodyScroll(activeModal) {
   if (activeModal.classList.contains("is-open")) {
-    disableScroll();
-  } else {
-    enableScroll();
-  }
-}
-
-function toggleModal() {
-  modal.classList.toggle("is-open");
-  if (modalAuth.classList.contains("is-open")) {
     disableScroll();
   } else {
     enableScroll();
@@ -447,7 +435,6 @@ function init() {
   buttonClearCart.addEventListener("click", function (e) {
     cart.length = 0;
     renderCart();
-    // closeModal(e);
   });
 
   modalBody.addEventListener("click", changeCount);
