@@ -14,7 +14,7 @@ const loginInput = document.querySelector("#login");
 const userName = document.querySelector(".user-name");
 const buttonOut = document.querySelector(".button-out");
 const cardsRestaurants = document.querySelector(".cards-restaurants");
-const containerPromo = document.querySelector(".container-promo");
+const swiperContainer = document.querySelector(".swiper-container");
 const restaurants = document.querySelector(".restaurants");
 const menu = document.querySelector(".menu");
 const logo = document.querySelector(".logo");
@@ -116,7 +116,7 @@ function authorized() {
     buttonOut.style.display = "";
     buttonCart.style.display = "";
     buttonOut.removeEventListener("click", logOut);
-    containerPromo.classList.remove("hide");
+    swiperContainer.classList.remove("hide");
     restaurants.classList.remove("hide");
     menu.classList.add("hide");
     inputSearch.value = "";
@@ -235,7 +235,7 @@ function openGoods(event) {
     const restaurant = target.closest(".card-restaurant");
     if (restaurant) {
       cardsMenu.textContent = "";
-      containerPromo.classList.add("hide");
+      swiperContainer.classList.add("hide");
       restaurants.classList.add("hide");
       menu.classList.remove("hide");
 
@@ -451,7 +451,7 @@ function init() {
 
   cardsRestaurants.addEventListener("click", openGoods);
   logo.addEventListener("click", function () {
-    containerPromo.classList.remove("hide");
+    swiperContainer.classList.remove("hide");
     restaurants.classList.remove("hide");
     menu.classList.add("hide");
   });
@@ -482,7 +482,7 @@ function init() {
                 return name.includes(value.toLowerCase());
               });
 
-              containerPromo.classList.add("hide");
+              swiperContainer.classList.add("hide");
               restaurants.classList.add("hide");
               menu.classList.remove("hide");
 
