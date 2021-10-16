@@ -1,6 +1,0 @@
-Client ID
-67332118180-tq19kn849dtvpc5kvt5keqk7srcfe9u7.apps.googleusercontent.com
-Client Secret
-W76_GNM0mXztOkgoq03hWQSb
-
-You must enable Billing on the Google Cloud Project
